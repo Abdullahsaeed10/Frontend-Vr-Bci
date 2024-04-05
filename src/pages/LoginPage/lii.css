@@ -1,0 +1,89 @@
+/* Login.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 400px; /* Increased width of the login box */
+    padding: 40px; /* Increased padding for a larger box */
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
+    backdrop-filter: blur(30px); /* This line is removed to eliminate the blur */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    z-index: 2;
+    color: #fff;
+  }
+  
+  h2 {
+    margin-bottom: 30px; /* Increase margin for a bigger header space */
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    font-size: 15px; /* Larger font size for inputs */
+    padding: 15px; /* Larger padding for a bigger input field */
+    margin-bottom: 20px; /* Increased margin for more space between fields */
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 70px;
+    color: #fff;
+    width: 90%;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="password"]::placeholder {
+    color: #fff; /* Set placeholder text color to white */
+  }
+  
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    background: rgba(255, 255, 255, 0.35);
+    outline: none;
+  }
+  
+  button {
+    padding: 15px; /* Larger padding for a bigger button */
+    margin-top: 20px; /* Increased margin for more space above the button */
+    background-color: #1ee5bd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 18px; /* Larger font size for the button text */
+  }
+  
+  button:hover {
+    background-color: #362f5e;
+  }
+  
+  .form-footer {
+    margin-top: 25px; /* Increased margin for more space below the button */
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .form-footer a {
+    color: #ADD8E6;
+    text-decoration: none;
+  }
+  
+  .form-footer a:hover {
+    text-decoration: underline;
+  }
+  

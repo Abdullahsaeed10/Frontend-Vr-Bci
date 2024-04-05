@@ -1,0 +1,112 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/background .jpg') no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+  /* Style for the container resembling the login box, with translucent backdrop */
+  .verification-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style for the code inputs, making them square and ensuring they are in one row */
+  .code-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the space between the input fields */
+    flex-wrap: nowrap;
+    padding: 20px; /* Padding around the code container for spacing */
+  }
+  
+  .code {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #fff;
+    border-radius: 5px; /* Slightly rounded corners for the input fields */
+    font-size: 24px; /* Large font size for better visibility */
+    width: 60px; /* Square dimensions for the input fields */
+    height: 60px;
+    text-align: center;
+    line-height: 55px; /* Center text line height vertically */
+    color: #010101;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  }
+  
+  .code-container input[type="text"],
+  textarea {
+    font-size: 25px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  /* Removes the increment arrows from input type number for Webkit browsers */
+  .code::-webkit-outer-spin-button,
+  .code::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .code:focus {
+    outline: none;
+    border: 2px solid #1ee5bd;
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  /* Style for the verify button */
+  .btn {
+    padding: 15px 0;
+    margin-top: 30px; /* Space above the button */
+    width: calc(100% - 80px); /* Button width taking into account padding */
+    max-width: 200px; /* Maximum width for the button */
+    background-color: #1ee5bd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase; /* Capitalized text for the button */
+  }
+  
+  .btn:hover {
+    background-color: #362f5e;
+  }
+  
+  /* Style for the information text below the button */
+  .info {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #ADD8E6;
+  }
+  
+  .info strong {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .info strong:hover {
+    text-decoration: none;
+  }
+  
