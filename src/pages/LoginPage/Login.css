@@ -4,7 +4,7 @@
 
 /* Container for the login form with blur effect */
 .login-container {
-  width: 100%;
+     width: 100%;
     max-width: 400px; /* Increased width of the login box */
     padding: 40px; /* Increased padding for a larger box */
     border-radius: 10px;
