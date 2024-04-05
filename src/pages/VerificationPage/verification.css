@@ -53,8 +53,8 @@ body, html {
   
   }
   
-  .code-container input[type="text"],
-  textarea {
+  .code-container input[type="text"]
+  {
     font-size: 25px;
     padding: 4px;
     border: 1px solid rgba(255, 255, 255, 0.2);
