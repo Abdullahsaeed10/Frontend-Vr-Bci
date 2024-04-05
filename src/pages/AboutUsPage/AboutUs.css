@@ -1,0 +1,28 @@
+.about-container {
+    width: 100%;
+    max-width: 600px; /* Increased width of the login box */
+    padding: 40px; /* Increased padding for a larger box */
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
+    backdrop-filter: blur(30px); /* This line is removed to eliminate the blur */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+.about-container h1, .about-container h2 {
+    color: #007bff;
+}
+
+.about-container p {
+    margin: 20px 0;
+    color: #333;
+}
+
+.mission, .vision {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}

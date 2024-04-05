@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./Login.css"; // Import the CSS directly if not using CSS Modules
 import { Link, useNavigate } from "react-router-dom";
+// import Footer from "../../components/Footer"; // Make sure the path matches where your Footer component is located
 
 function Login() {
   const [username, setUsername] = useState("");

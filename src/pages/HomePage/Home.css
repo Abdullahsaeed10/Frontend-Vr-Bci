@@ -1,0 +1,116 @@
+/* HomePage.css - Styles for the HomePage component */
+
+.home-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-logo {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/path/to/your/background-image.jpg') no-repeat center center/cover;
+    color: #fff;
+}
+
+.home-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.home-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-get-started {
+    padding: 10px 20px;
+    background-color: #1ee5bd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-get-started:hover {
+    background-color: #17a692;
+}
+
+.home-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Additional or adjusted styles for HomePage */
+
+.nav-action {
+    margin-left: 20px;
+    background-color: #1ee5bd;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.nav-action:hover {
+    background-color: #17a692;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px; /* Adjust based on your design preference */
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
