@@ -1,8 +1,8 @@
-import "./components.css"; // Assuming you will create a dedicated CSS file for the footer
+import "./components.css"; 
 
 const Footer = () => {
   return (
-    <footer className="home-footer">
+    <footer className="footer">
       © {new Date().getFullYear()} YourBrand - All Rights Reserved
     </footer>
   );

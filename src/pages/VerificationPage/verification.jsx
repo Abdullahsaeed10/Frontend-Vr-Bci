@@ -1,13 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 import "./verification.css"; // Ensure the CSS file is correctly imported.
 
+import Footer from "../../components/Footer"; // Ensure correct import path
+import NavBar from "../../components/Header";
+
 const Verification = () => {
   const [codes, setCodes] = useState(new Array(6).fill(""));
   const [error, setError] = useState(""); // For displaying any error messages
   const inputsRef = useRef(new Array(6));
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  console.log("🚀 ~ Verification ~ backendUrl:", backendUrl)
+  console.log("🚀 ~ Verification ~ backendUrl:", backendUrl);
 
   const handleChange = (value, index) => {
     const newCodes = [...codes];
@@ -38,7 +41,7 @@ const Verification = () => {
     try {
       // Retrieve the token from localStorage
       const token = localStorage.getItem("token");
-      console.log("🚀 ~ verifyCode ~ token:", token)
+      console.log("🚀 ~ verifyCode ~ token:", token);
       if (!token) {
         setError("No authentication token found. Please login again.");
         return;
@@ -71,37 +74,45 @@ const Verification = () => {
   }, []);
 
   return (
-    <div className="verification-container">
-      <h2>Connect Your Headset</h2>
-      <p>
-        Please enter the 6-digit code that appears on your headset to connect.
-      </p>
-      {error && <div className="error-message">{error}</div>}{" "}
-      {/* Display any error messages */}
-      <div className="code-container">
-        {codes.map((code, index) => (
-          <input
-            key={index}
-            type="text"
-            className="code"
-            maxLength="1"
-            value={code}
-            onChange={(e) => handleChange(e.target.value, index)}
-            onKeyDown={(e) => handleKeyDown(e, index)}
-            ref={(el) => (inputsRef.current[index] = el)}
-            required
-          />
-        ))}
+    <div className="home-container">
+      <NavBar /> {/* Using NavBar component */}
+      <div className="verification-container">
+        <h2>Connect Your Headset</h2>
+        <p>
+          Please enter the 6-digit code that appears on your headset to connect.
+        </p>
+        {error && <div className="error-message">{error}</div>}{" "}
+        {/* Display any error messages */}
+        <div className="code-container">
+          {codes.map((code, index) => (
+            <input
+              key={index}
+              type="text"
+              className="code"
+              maxLength="1"
+              value={code}
+              onChange={(e) => handleChange(e.target.value, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              ref={(el) => (inputsRef.current[index] = el)}
+              required
+            />
+          ))}
+        </div>
+        <div>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={verifyCode}
+          >
+            Verify
+          </button>
+        </div>
+        <small className="info">
+          If you are having trouble, make sure your headset is on and within
+          range.
+        </small>
       </div>
-      <div>
-        <button type="button" className="btn btn-primary" onClick={verifyCode}>
-          Verify
-        </button>
-      </div>
-      <small className="info">
-        If you are having trouble, make sure your headset is on and within
-        range.
-      </small>
+      <Footer /> {/* Footer component */}
     </div>
   );
 };

@@ -1,7 +1,58 @@
-.home-footer {
+.footer {
     background-color: #007bff;
     color: #ffffff;
     text-align: center;
-    padding: 20px 10%;
-    margin-top: 40px;
+    padding: 20px 0; /* Set horizontal padding to 0 */
+    width: 100%; /* Ensure the footer is full width */
+    position: absolute; /* Position it at the bottom */
+    bottom: 0; /* Align it to the bottom */
+    left: 0; /* Align it to the left side */
 }
+
+/* components.css */
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.nav-logo {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Or any value that suits your design */
+}
+
+.nav-links a, .nav-action-logout {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.nav-action-logout {
+    background-color: #ff4b4b;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: inherit; /* Match font-size with other links */
+    line-height: inherit; /* Match line-height with other links */
+}
+
+.nav-action-logout:hover {
+    background-color: #cc0000;
+}
+
+/* Ensure the logout button's height matches that of the links */
+/* If the links are not buttons, they may not align perfectly due to differences in box-sizing */
+/* You might need to adjust padding or line-height to get the exact alignment */
