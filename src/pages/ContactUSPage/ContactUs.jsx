@@ -60,7 +60,7 @@ const ContactUs = () => {
       </p>
       <ul className="contact-info">
         <li>Email: contact@example.com</li>
-        <li>Phone: +0201099947655</li>
+        <li>Phone: +0212345678</li>
         <li>Address: 123 example street, city, country.</li>
       </ul>
       <form className="contact-form" onSubmit={handleSubmit}>
