@@ -109,3 +109,24 @@ body, html {
     text-decoration: none;
   }
   
+    /* Existing styles for error messages */
+  .error-message {
+      color: #ff3860;
+      background-color: #ffe5e7;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ff3860;
+      text-align: center;
+  }
+
+  /* New styles for success messages */
+  .success-message {
+      color: #23d160;
+      background-color: #e8f8f5;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #23d160;
+      text-align: center;
+  }

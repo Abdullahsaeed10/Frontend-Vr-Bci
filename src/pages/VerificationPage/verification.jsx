@@ -1,12 +1,14 @@
 import { useState, useRef, useEffect } from "react";
-import "./verification.css"; // Ensure the CSS file is correctly imported.
+import "./verification.css";
 
-import Footer from "../../components/Footer"; // Ensure correct import path
+import Footer from "../../components/Footer";
 import NavBar from "../../components/Header";
 
 const Verification = () => {
   const [codes, setCodes] = useState(new Array(6).fill(""));
   const [error, setError] = useState(""); // For displaying any error messages
+  const [successMessage, setSuccessMessage] = useState(""); // For displaying success message
+  console.log("🚀 ~ Verification ~ setSuccessMessage:", setSuccessMessage);
   const inputsRef = useRef(new Array(6));
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -29,17 +31,17 @@ const Verification = () => {
   };
 
   const verifyCode = async () => {
-    // Join the individual codes into a single string
-    const fullCode = codes.join("");
+    // Reset error and success messages each time verification is attempted
+    setError("");
+    setSuccessMessage("");
 
-    // Basic validation to check if all inputs are filled
+    const fullCode = codes.join("");
     if (fullCode.length < codes.length) {
       setError("Please fill in all the fields.");
       return;
     }
 
     try {
-      // Retrieve the token from localStorage
       const token = localStorage.getItem("token");
       console.log("🚀 ~ verifyCode ~ token:", token);
       if (!token) {
@@ -51,17 +53,18 @@ const Verification = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Use the token
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ code: fullCode }),
       });
 
+      const data = await response.json();
       if (!response.ok) {
-        const data = await response.json();
         throw new Error(data.message || "Verification failed");
       }
-
-      // Handle success (e.g., navigate to another page or show a success message)
+      // Assuming the success message is in data.data or data.message
+      // Adjust according to your API response
+      setSuccessMessage(data.data || data.message);
       console.log("Verification successful");
     } catch (error) {
       console.error("Verification error:", error);
@@ -70,19 +73,22 @@ const Verification = () => {
   };
 
   useEffect(() => {
-    inputsRef.current[0].focus(); // Automatically focus the first input on component mount
+    inputsRef.current[0].focus();
   }, []);
 
   return (
     <div className="home-container">
-      <NavBar /> {/* Using NavBar component */}
+      <NavBar />
       <div className="verification-container">
         <h2>Connect Your Headset</h2>
         <p>
           Please enter the 6-digit code that appears on your headset to connect.
         </p>
-        {error && <div className="error-message">{error}</div>}{" "}
-        {/* Display any error messages */}
+        {error && <div className="error-message">{error}</div>}
+        {successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}{" "}
+        {/* Display success message */}
         <div className="code-container">
           {codes.map((code, index) => (
             <input
@@ -112,7 +118,7 @@ const Verification = () => {
           range.
         </small>
       </div>
-      <Footer /> {/* Footer component */}
+      <Footer />
     </div>
   );
 };
