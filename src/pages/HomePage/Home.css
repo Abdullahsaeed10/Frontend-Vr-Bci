@@ -93,12 +93,18 @@
 }
 
 .btn-secondary, .btn-primary {
-    background-color: #fff;
-    color: #333;
+   padding: 15px;
+  margin-top: 20px;
+  background-color: #1ee5bd;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 .btn-secondary:hover, .btn-primary:hover {
-    transform: scale(1.05);
+  transition: background-color 0.3s;
 }
 
 /* Since we are removing the footer from this full-page design, you can omit the .home-footer styles */

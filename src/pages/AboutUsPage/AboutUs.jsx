@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./AboutUs.css";
 
 const AboutUs = () => {
@@ -5,9 +6,9 @@ const AboutUs = () => {
     <div className="about-container">
       <h1>About Us</h1>
       <p>
-        Welcome to YourBrand, where we deliver excellence in [Your
-        Industry/Field]. Founded in [Year], we have been committed to providing
-        quality [Products/Services] and exceptional customer service.
+        Welcome where we deliver excellence in [Your Industry/Field]. Founded in
+        [Year], we have been committed to providing quality [Products/Services]
+        and exceptional customer service.
       </p>
       <div className="mission">
         <h2>Our Mission</h2>
@@ -23,6 +24,11 @@ const AboutUs = () => {
           We strive to be the leading provider in [Your Industry/Field],
           recognized for our commitment to quality and sustainability.
         </p>
+      </div>
+      <div className="home-button-container">
+        <Link to="/" className="home-button">
+          Back Home
+        </Link>
       </div>
     </div>
   );

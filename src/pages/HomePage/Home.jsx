@@ -8,8 +8,8 @@ const HomePage = () => {
     <div className="home-container">
       <NavBar /> {/* Using NavBar component */}
       <header className="home-hero">
-        <h1>Welcome to YourBrand</h1>
-        <p>Delivering excellence, one client at a time.</p>
+        <h1>Welcome to ----------</h1>
+        <p>Delivering excellence</p>
         <div className="hero-actions">
           <Link to="/login" className="btn btn-secondary">
             Login

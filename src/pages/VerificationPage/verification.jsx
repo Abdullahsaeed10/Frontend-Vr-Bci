@@ -47,7 +47,7 @@ const Verification = () => {
         return;
       }
 
-      const response = await fetch(`${backendUrl}/auth/login/obtaintoken`, {
+      const response = await fetch(`${backendUrl}/auth/enterotp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

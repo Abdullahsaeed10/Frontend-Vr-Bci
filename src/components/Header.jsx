@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logoImage from "/images/images/logo.png"; // Update with the correct path to your logo image
 import "./components.css"; // Ensure this is the correct path to your CSS file
 
 const NavBar = () => {
@@ -12,25 +13,25 @@ const NavBar = () => {
   const shouldShowLogout = pathsToShowLogout.includes(pathname);
 
   const handleLogout = () => {
-    // Implement your logout logic here, like clearing the auth token and redirecting to login page
+    // Implement your logout logic here
     console.log("Logging out...");
+    // Typically, you would clear the authentication token and redirect the user to the login page
   };
 
   return (
     <nav className="home-nav">
       <Link to="/" className="nav-logo">
-        YourBrand
+        <img src={logoImage} alt="YourBrand Logo" />
       </Link>
       <div className="nav-links">
         <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/contact">Contact</Link>
         {shouldShowLogout && (
-          <button onClick={handleLogout} className="nav-action-logout">
+          <Link to="/" onClick={handleLogout} className="nav-action-logout">
             Logout
-          </button>
+          </Link>
         )}
-
       </div>
     </nav>
   );

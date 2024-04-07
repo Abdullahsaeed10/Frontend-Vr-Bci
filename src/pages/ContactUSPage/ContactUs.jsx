@@ -1,4 +1,5 @@
 import "./ContactUs.css";
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
   return (
@@ -9,22 +10,39 @@ const ContactUs = () => {
         channels:
       </p>
       <ul className="contact-info">
-        <li>Email: contact@yourbrand.com</li>
-        <li>Phone: +123 456 7890</li>
-        <li>Address: 123 Business Rd, Your City, YC 10101</li>
+        <li>Email: contact@example.com</li>
+        <li>Phone: +0201099947655</li>
+        <li>Address: 123 example street, city, country.</li>
       </ul>
       <form className="contact-form">
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <label></label>
+        <input type="text" id="name" name="name" placeholder="Name" required />
 
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <label></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
 
-        <label htmlFor="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <label></label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Message"
+          required
+        ></textarea>
 
         <button type="submit">Send Message</button>
       </form>
+      <div className="home-button-container">
+        <Link to="/" >
+          Back Home
+        </Link>
+      </div>
     </div>
   );
 };
