@@ -8,11 +8,10 @@ const Verification = () => {
   const [codes, setCodes] = useState(new Array(6).fill(""));
   const [error, setError] = useState(""); // For displaying any error messages
   const [successMessage, setSuccessMessage] = useState(""); // For displaying success message
-  console.log("🚀 ~ Verification ~ setSuccessMessage:", setSuccessMessage);
+  
   const inputsRef = useRef(new Array(6));
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  console.log("🚀 ~ Verification ~ backendUrl:", backendUrl);
 
   const handleChange = (value, index) => {
     const newCodes = [...codes];
@@ -43,7 +42,6 @@ const Verification = () => {
 
     try {
       const token = localStorage.getItem("token");
-      console.log("🚀 ~ verifyCode ~ token:", token);
       if (!token) {
         setError("No authentication token found. Please login again.");
         return;

@@ -24,6 +24,9 @@ function Signup() {
     (field) => field.trim() !== ""
   );
 
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+
   const handleChange = (e) => {
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
   };
@@ -59,7 +62,7 @@ function Signup() {
 
     // Perform the sign-up operation
     const response = await fetch(
-      "https://vrbcicompanion-1-d3565436.deta.app/api/v1/patient/signup",
+      `${backendUrl}/patient/signup`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -10,6 +10,8 @@ function Login() {
   const [error, setError] = useState(""); // State for storing login errors
   const navigate = useNavigate(); // Updated to useNavigate
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -21,7 +23,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "https://vrbcicompanion-1-d3565436.deta.app/api/v1/auth/login/obtaintoken",
+        `${backendUrl}/auth/login/obtaintoken`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
