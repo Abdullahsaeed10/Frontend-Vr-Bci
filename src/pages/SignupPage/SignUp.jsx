@@ -1,4 +1,3 @@
-// SignUp.jsx
 import { useState } from "react";
 import "./SignUp.css"; // Ensure this points to your SignUp.css file
 import { Link } from "react-router-dom";
@@ -19,13 +18,15 @@ function Signup() {
     diagnosis: "",
   });
 
+  const [error, setError] = useState(""); // For displaying any error messages
+  const [successMessage, setSuccessMessage] = useState(""); // For displaying success messages
+
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
   // Check if all fields are filled
   const allFieldsFilled = Object.values(userDetails).every(
     (field) => field.trim() !== ""
   );
-
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
 
   const handleChange = (e) => {
     setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
@@ -34,49 +35,50 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // If not all fields are filled, alert the user and return early
+    // Reset messages
+    setError("");
+    setSuccessMessage("");
+
     if (!allFieldsFilled) {
-      alert("Please fill in all the fields.");
+      setError("Please fill in all the fields.");
       return;
     }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(userDetails.email)) {
-      alert("Please enter a valid email address.");
+      setError("Please enter a valid email address.");
       return;
     }
 
     // Phone number validation
     const phoneNumber = parsePhoneNumberFromString(userDetails.phone);
     if (!phoneNumber || !phoneNumber.isValid()) {
-      alert("Please enter a valid phone number with country code.");
+      setError("Please enter a valid phone number with country code.");
       return;
     }
 
-    // Validate that password and confirmPassword are the same
     if (userDetails.password !== userDetails.confirmPassword) {
-      alert("The passwords do not match.");
+      setError("The passwords do not match.");
       return;
     }
 
-    // Perform the sign-up operation
-    const response = await fetch(
-      `${backendUrl}/patient/signup`,
-      {
+    try {
+      const response = await fetch(`${backendUrl}/patient/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userDetails),
-      }
-    );
+      });
 
-    // Handle the response from the sign-up operation
-    if (response.ok) {
-      // Handle a successful sign-up
-      console.log("Account created successfully!");
-    } else {
-      // Handle errors, for example:
-      console.log("An error occurred during sign-up.");
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.message || "An error occurred during sign-up.");
+      }
+
+      setSuccessMessage("Account created successfully!");
+    } catch (error) {
+      console.error("Sign-up error:", error);
+      setError(error.message || "An error occurred during sign-up.");
     }
   };
 
@@ -94,7 +96,7 @@ function Signup() {
             onChange={handleChange}
           />
         </div>
-        <div className="signup-form-row ">
+        <div className="signup-form-row">
           <input
             type="text"
             className="signup-input"
@@ -122,7 +124,7 @@ function Signup() {
             onChange={handleChange}
           />
         </div>
-        <div className="signup-form-row ">
+        <div className="signup-form-row">
           <input
             type="password"
             className="signup-input"
@@ -188,6 +190,10 @@ function Signup() {
         <button type="submit" className="signup-button">
           Sign Up
         </button>
+        {error && <div className="error-message">{error}</div>}
+        {successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}
         <div className="signup-form-footer">
           <p>
             Already have an account? <Link to="/">Log in</Link>
