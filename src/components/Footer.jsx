@@ -1,9 +1,9 @@
-import "./components.css"; 
+import "./components.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      © {new Date().getFullYear()} Rehabilitaion - All Rights Reserved
+      © {new Date().getFullYear()} Neurohike - All Rights Reserved
     </footer>
   );
 };

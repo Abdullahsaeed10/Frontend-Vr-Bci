@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./SignUp.css"; // Ensure this points to your SignUp.css file
 import { Link } from "react-router-dom";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
+import NavBar from "../../components/Header";
+import Footer from "../../components/Footer";
 
 function Signup() {
   const [userDetails, setUserDetails] = useState({
@@ -83,123 +85,129 @@ function Signup() {
   };
 
   return (
-    <div className="signup-container">
-      <h2 className="signup-title">Sign Up</h2>
-      <form onSubmit={handleSubmit} className="signup-form">
-        <div className="signup-form-row full-width">
-          <input
-            type="text"
-            className="signup-input"
-            name="username"
-            placeholder="@Username"
-            value={userDetails.username}
-            onChange={handleChange}
-          />
+    <div className="page-container">
+      <NavBar />
+      <div className="content-wrapper">
+        <div className="signup-container">
+          <h2 className="signup-title">Sign Up</h2>
+          <form onSubmit={handleSubmit} className="signup-form">
+            <div className="signup-form-row full-width">
+              <input
+                type="text"
+                className="signup-input"
+                name="username"
+                placeholder="@Username"
+                value={userDetails.username}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signup-form-row">
+              <input
+                type="text"
+                className="signup-input"
+                name="first_name"
+                placeholder="First Name"
+                value={userDetails.first_name}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                className="signup-input"
+                name="last_name"
+                placeholder="Last Name"
+                value={userDetails.last_name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signup-form-row full-width">
+              <input
+                type="email"
+                className="signup-input"
+                name="email"
+                placeholder="Example@example.com"
+                value={userDetails.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signup-form-row">
+              <input
+                type="password"
+                className="signup-input"
+                name="password"
+                placeholder="Password"
+                value={userDetails.password}
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                className="signup-input"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={userDetails.confirmPassword}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signup-form-row">
+              <input
+                type="tel"
+                className="signup-input"
+                name="phone"
+                placeholder="Phone"
+                value={userDetails.phone}
+                onChange={handleChange}
+              />
+              <input
+                type="date"
+                className="signup-input"
+                name="date_of_birth"
+                placeholder="Date of Birth"
+                value={userDetails.date_of_birth}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signup-form-row">
+              <input
+                type="text"
+                className="signup-input"
+                name="rehabilitation_program"
+                placeholder="Rehabilitation Program"
+                value={userDetails.rehabilitation_program}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                className="signup-input"
+                name="diagnosis"
+                placeholder="Diagnosis"
+                value={userDetails.diagnosis}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="signup-form-row full-width">
+              <textarea
+                className="signup-input"
+                name="medical_history"
+                placeholder="Medical History"
+                value={userDetails.medical_history}
+                onChange={handleChange}
+              />
+            </div>
+            <button type="submit" className="signup-button">
+              Sign Up
+            </button>
+            {error && <div className="error-message">{error}</div>}
+            {successMessage && (
+              <div className="success-message">{successMessage}</div>
+            )}
+            <div className="signup-form-footer">
+              <p>
+                Already have an account? <Link to="/login">Log in</Link>
+              </p>
+            </div>
+          </form>
         </div>
-        <div className="signup-form-row">
-          <input
-            type="text"
-            className="signup-input"
-            name="first_name"
-            placeholder="First Name"
-            value={userDetails.first_name}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            className="signup-input"
-            name="last_name"
-            placeholder="Last Name"
-            value={userDetails.last_name}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="signup-form-row full-width">
-          <input
-            type="email"
-            className="signup-input"
-            name="email"
-            placeholder="Example@example.com"
-            value={userDetails.email}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="signup-form-row">
-          <input
-            type="password"
-            className="signup-input"
-            name="password"
-            placeholder="Password"
-            value={userDetails.password}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            className="signup-input"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={userDetails.confirmPassword}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="signup-form-row">
-          <input
-            type="tel"
-            className="signup-input"
-            name="phone"
-            placeholder="Phone"
-            value={userDetails.phone}
-            onChange={handleChange}
-          />
-          <input
-            type="date"
-            className="signup-input"
-            name="date_of_birth"
-            placeholder="Date of Birth"
-            value={userDetails.date_of_birth}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="signup-form-row">
-          <input
-            type="text"
-            className="signup-input"
-            name="rehabilitation_program"
-            placeholder="Rehabilitation Program"
-            value={userDetails.rehabilitation_program}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            className="signup-input"
-            name="diagnosis"
-            placeholder="Diagnosis"
-            value={userDetails.diagnosis}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="signup-form-row full-width">
-          <textarea
-            className="signup-input"
-            name="medical_history"
-            placeholder="Medical History"
-            value={userDetails.medical_history}
-            onChange={handleChange}
-          />
-        </div>
-        <button type="submit" className="signup-button">
-          Sign Up
-        </button>
-        {error && <div className="error-message">{error}</div>}
-        {successMessage && (
-          <div className="success-message">{successMessage}</div>
-        )}
-        <div className="signup-form-footer">
-          <p>
-            Already have an account? <Link to="/">Log in</Link>
-          </p>
-        </div>
-      </form>
+      </div>
+      <Footer />
     </div>
   );
 }

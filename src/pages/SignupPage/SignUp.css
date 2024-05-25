@@ -1,25 +1,24 @@
 /* SignUp.css - Specific styles for the SignUp component */
 
 .signup-container {
-    width: 100%;
-    max-width: 400px; /* Increased width of the login box */
-    padding: 40px; /* Increased padding for a larger box */
-    border-radius: 10px;
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
-    backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
-    z-index:2 ;
-    color: #fff;
-  }
-  
-  /* Title styles */
-  .signup-title {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
- 
+  width: 100%;
+  max-width: 400px; /* Increased width of the signup box */
+  padding: 40px; /* Increased padding for a larger box */
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+/* Title styles */
+.signup-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .signup-form-row {
   display: flex;
   flex-direction: row;
@@ -32,7 +31,8 @@
 }
 
 .signup-input,
-.signup-textarea { /* Added a class for textarea as well */
+.signup-textarea {
+  /* Added a class for textarea as well */
   width: calc(100% - 24px); /* Adjust the width to account for padding */
   margin-bottom: 10px; /* Space between fields */
   padding: 12px; /* Same padding for all input fields */
@@ -47,7 +47,8 @@
 
 .signup-form-row.half-width > div,
 .signup-form-row.half-width > input,
-.signup-form-row.half-width > .signup-textarea { /* Ensure direct children take up equal width */
+.signup-form-row.half-width > .signup-textarea {
+  /* Ensure direct children take up equal width */
   width: calc(50% - 12px); /* Subtract the gap from the total width */
 }
 
@@ -62,10 +63,28 @@
   .signup-form-row.half-width {
     flex-direction: column;
   }
-  
+
   .signup-form-row.half-width > div,
   .signup-form-row.half-width > input,
   .signup-form-row.half-width > .signup-textarea {
     width: calc(100% - 24px); /* Full width on smaller screens */
   }
+}
+
+.signup-form-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.signup-form-footer h4 {
+  margin: 10px 0;
+}
+
+.signup-form-footer a {
+  color: #1ee5bd;
+  text-decoration: none;
+}
+
+.signup-form-footer a:hover {
+  text-decoration: underline;
 }

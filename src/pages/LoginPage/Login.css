@@ -4,20 +4,18 @@
 
 /* Container for the login form with blur effect */
 .login-container {
-    width: 100%;
-    max-width: 400px; /* Increased width of the login box */
-    padding: 40px; /* Increased padding for a larger box */
-    border-radius: 10px;
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
-    backdrop-filter: blur(30px); /* This line is removed to eliminate the blur */
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    
+  width: 100%;
+  max-width: 400px; /* Increased width of the login box */
+  padding: 40px; /* Increased padding for a larger box */
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
+  backdrop-filter: blur(30px); /* This line is removed to eliminate the blur */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  transform: translateX(-40px); /* Move slightly to the left */
 }
-
-
 
 /* Styles for the title of the login form */
 .login-title {
@@ -28,7 +26,6 @@
 /* Styles for input groups in the login form */
 .login-input-group {
   margin-bottom: 20px;
-  
 }
 
 /* Styles for inputs in the login form */
@@ -79,7 +76,7 @@
 
 /* Styles for links in the login form footer */
 .login-form-footer a {
-  color: #ADD8E6;
+  color: #add8e6;
   text-decoration: none;
 }
 
@@ -88,3 +85,21 @@
 }
 
 /* Include other styles as necessary */
+/* Login.css - Additional Styles */
+.login-form-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.login-form-footer h4 {
+  margin: 10px 0;
+}
+
+.login-form-footer a {
+  color: #1ee5bd;
+  text-decoration: none;
+}
+
+.login-form-footer a:hover {
+  text-decoration: underline;
+}
