@@ -1,10 +1,8 @@
-/* NotFoundPage.css - Specific styles for the 404 Not Found component */
-
-/* Container for the 404 message with styles inspired by the login form */
 .not-found-container {
   width: 100%;
-  max-width: 400px;
-  padding: 40px;
+}
+
+.not-found-styling {
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
   backdrop-filter: blur(30px);
@@ -12,23 +10,20 @@
   position: relative;
   z-index: 2;
   color: #fff;
-  text-align: center; /* Center-align the text for a 404 page */
+  text-align: center;
 }
 
-/* Title style, reused from login.css */
 .not-found-title {
   margin-bottom: 30px;
   text-align: center;
-  font-size: 100px;
+  font-size: 6rem; /* Larger font size for the 404 title */
 }
 
-/* Styling for the main message text */
 .not-found-message {
   margin-bottom: 20px;
   font-size: 18px;
 }
 
-/* Button style, reused from login.css */
 .not-found-button {
   padding: 15px;
   margin-top: 20px;
@@ -43,21 +38,4 @@
 
 .not-found-button:hover {
   background-color: #362f5e;
-}
-
-/* Footer text style, similar to the login form footer */
-.not-found-footer {
-  margin-top: 25px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* Link styles within the footer, similar to login.css */
-.not-found-footer a {
-  color: #ADD8E6;
-  text-decoration: none;
-}
-
-.not-found-footer a:hover {
-  text-decoration: underline;
 }

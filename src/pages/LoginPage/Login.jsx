@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./Login.css"; // Import the CSS directly if not using CSS Modules
 import { Link, useNavigate } from "react-router-dom";
-import NavBar from "../../components/Header";
-import Footer from "../../components/Footer";
+// import Footer from "../../components/Footer";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -46,48 +45,44 @@ function Login() {
   };
 
   return (
-    <div className="page-container">
-      <NavBar />
-      <div className="content-wrapper">
-        <div className="login-container">
-          <form onSubmit={handleSubmit}>
-            <h2 className="login-title">Login</h2>
-            {error && <div className="login-error">{error}</div>}
-            <div className="login-input-group">
-              <input
-                type="text"
-                className="login-input"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <div className="login-input-group">
-              <input
-                type="password"
-                className="login-input"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <button type="submit" className="login-button">
-              Login
-            </button>
-            <div className="login-form-footer">
-              <h4>
-                Dont have an account? <Link to="/signup">Register</Link>
-              </h4>
-              <h4>
-                Forgot your password?{" "}
-                <Link to="/forgotpassword">Reset it here</Link>
-              </h4>
-            </div>
-          </form>
-        </div>
+    <>
+      <div className="login-container flex justify-center  lg:mt-20 mt-10 ">
+        <form onSubmit={handleSubmit} className="login-styling lg:p-14 p-5 ">
+          <h2 className="login-title text-3xl font-bold py-2">Login</h2>
+          {error && <div className="login-error">{error}</div>}
+          <div className="login-input-group">
+            <input
+              type="text"
+              className="login-input"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="login-input-group">
+            <input
+              type="password"
+              className="login-input"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="login-button">
+            Login
+          </button>
+          <div className="login-form-footer">
+            <h4>
+              Dont have an account? <Link to="/signup">Register</Link>
+            </h4>
+            <h4>
+              Forgot your password?{" "}
+              <Link to="/forgotpassword">Reset it here</Link>
+            </h4>
+          </div>
+        </form>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./ForgotPassword.css"; // Make sure to create a ForgotPasswordPage.css file in the same directory
+import "./ForgotPassword.css"; // Ensure this path is correct
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL; // Ensure you have VITE_BACKEND_URL set in your environment variables
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,9 +37,14 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="forgot-password-container">
-      <form onSubmit={handleSubmit} className="forgot-password-form">
-        <h1 className="forgot-password-title">Forgot Password</h1>
+    <div className="forgot-password-container flex justify-center lg:mt-20 mt-10">
+      <form
+        onSubmit={handleSubmit}
+        className="forgot-password-styling lg:p-14 p-5"
+      >
+        <h2 className="forgot-password-title text-3xl font-bold py-2">
+          Forgot Password
+        </h2>
         {message && <div className="forgot-password-message">{message}</div>}
         {error && <div className="forgot-password-error">{error}</div>}
         <div className="forgot-password-input-group">
@@ -53,10 +58,12 @@ const ForgotPassword = () => {
           />
         </div>
         <button type="submit" className="forgot-password-button">
-          Send Reset Link
+          {message ? "Sending..." : "Send Reset Link"}
         </button>
         <div className="forgot-password-form-footer">
-          <Link to="/login">Back to Login</Link>
+          <h4>
+            <Link to="/login">Back to Login</Link>
+          </h4>
         </div>
       </form>
     </div>

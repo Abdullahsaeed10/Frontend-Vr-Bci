@@ -1,54 +1,69 @@
 .contact-container {
-    padding: 40px; /* Increased padding for a larger box */
-    border-radius: 10px;
-    box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
-    backdrop-filter: blur(30px); /* This line is removed to eliminate the blur */
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
-    z-index: 2;
-    color: #fff;
+  width: 100%;
 }
 
-.contact-container h1 {
-    color: #007bff;
+.contact-styling {
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
+  backdrop-filter: blur(100px); /* This line matches the AboutUs.css */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
 }
 
-.contact-info {
-    list-style: none;
-    padding: 0;
+.contact-container h1,
+.contact-container h2 {
+  color: #fff;
 }
 
+.contact-container p,
 .contact-info li {
-    margin-bottom: 10px;
-}
-
-.contact-form label {
-    display: block;
-    margin-top: 20px;
+  margin: 20px 0;
+  color: #fff;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    box-sizing: border-box; /* Makes sure padding doesn't affect the overall width */
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
 }
-
+/* 
 .contact-form button {
-    display: block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+  display: block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} */
 
 .contact-form button:hover {
-    background-color: #0056b3;
+  background-color: #362f5e;
+}
+
+.home-button-container {
+  margin-top: 20px;
+}
+/* 
+.login-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+} */
+
+.login-button:hover {
+  background-color: #362f5e;
+}
+
+.form-message {
+  margin-top: 20px;
+  color: #fff;
 }

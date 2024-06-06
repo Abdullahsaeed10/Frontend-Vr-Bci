@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import "./Home.css"; // Updated CSS for a more professional look
-import Footer from "../../components/Footer"; // Ensure correct import path
-import NavBar from "../../components/Header";
+// import Footer from '../../components/Footer'; // Ensure correct import path
 
 const HomePage = () => {
   return (
     <div className="home-container">
-      <NavBar /> {/* Using NavBar component */}
       <header className="home-hero">
         <h1>Welcome to Neurohike</h1>
         <p>Delivering excellence</p>
@@ -19,7 +17,7 @@ const HomePage = () => {
           </Link>
         </div>
       </header>
-      <Footer /> {/* Footer component */}
+      {/* Footer component */}
     </div>
   );
 };

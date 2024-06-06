@@ -2,8 +2,10 @@
 
 .signup-container {
   width: 100%;
-  max-width: 400px; /* Increased width of the signup box */
-  padding: 40px; /* Increased padding for a larger box */
+}
+
+.signup-styling {
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
   backdrop-filter: blur(30px);
@@ -33,7 +35,6 @@
 .signup-input,
 .signup-textarea {
   /* Added a class for textarea as well */
-  width: calc(100% - 24px); /* Adjust the width to account for padding */
   margin-bottom: 10px; /* Space between fields */
   padding: 12px; /* Same padding for all input fields */
   /* ... other styles ... */

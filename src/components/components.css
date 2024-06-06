@@ -1,62 +1,60 @@
 /* Footer Styles */
 .footer {
-    background-color: #007bff;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /* NavBar Styles */
 .home-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* Make sure nav stays on top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+
+  width: 100%;
 }
 
 .nav-logo {
-    margin-left: 20px; /* Pushes the logo to the right */
+  margin-left: 20px; /* Pushes the logo to the right */
 }
 
 .nav-logo img {
-    height: 60px; /* Adjust the size as needed */
-    width: auto; /* Keep the original aspect ratio */
-    object-fit: contain; /* Scale the image correctly */
+  height: 70px; /* Adjust the size as needed */
+  width: auto; /* Keep the original aspect ratio */
+  object-fit: contain; /* Scale the image correctly */
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Spacing between nav items */
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Spacing between nav items */
 }
 
-.nav-links a, .nav-action-logout {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: color 0.3s;
+.nav-links a,
+.nav-action-logout {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s;
 }
 
 .nav-action-logout {
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .nav-action-logout:hover {
-    background-color: #cc0000; /* Darker shade on hover */
+  background-color: #cc0000; /* Darker shade on hover */
 }
 
 .home-button-container {
@@ -74,6 +72,13 @@
   transition: background-color 0.3s;
 }
 
-.home-button:hover {
+/* .home-button:hover {
   background-color: #0056b3;
+} */
+
+.menu-overlay {
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 135, 92, 0.37);
+  backdrop-filter: blur(30px); /* This line is removed to eliminate the blur */
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }

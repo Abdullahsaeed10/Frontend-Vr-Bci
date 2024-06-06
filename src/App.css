@@ -1,20 +1,25 @@
-body,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* body,
 html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../../assets/background .jpg") no-repeat center center fixed;
+  background: url('../../assets/background .jpg') no-repeat center center fixed;
   background-size: cover;
-}
+} */
 
 /* main.css - Common styles for the application */
 
 :root {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   text-align: center;
@@ -50,15 +55,6 @@ html {
     animation: logo-spin infinite 20s linear;
   }
 }
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
 
 button,
 .btn {
@@ -79,11 +75,11 @@ button:hover,
   background-color: #362f5e;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='tel'],
+input[type='date'],
 textarea {
   font-size: 15px;
   padding: 12px;
@@ -135,24 +131,6 @@ textarea:focus {
   color: #fff;
 }
 
-.container h1,
-.container h2 {
-  color: #007bff;
-}
-
-.container p {
-  margin: 20px 0;
-  color: #333;
-}
-
-.mission,
-.vision {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
 @media (max-width: 768px) {
   .container {
     padding: 20px;
@@ -165,11 +143,11 @@ textarea:focus {
     font-size: 16px;
   }
 
-  input[type="text"],
-  input[type="password"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="date"],
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='date'],
   textarea {
     font-size: 14px;
     padding: 10px;
