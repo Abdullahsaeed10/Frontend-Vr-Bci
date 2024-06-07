@@ -1,10 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
-import './verification.css';
+import { useState, useRef, useEffect } from "react";
+import "./verification.css";
 
 const Verification = () => {
-  const [codes, setCodes] = useState(new Array(6).fill(''));
-  const [error, setError] = useState(''); // For displaying any error messages
-  const [successMessage, setSuccessMessage] = useState(''); // For displaying success message
+  const [codes, setCodes] = useState(new Array(6).fill(""));
+  const [error, setError] = useState(""); // For displaying any error messages
+  const [successMessage, setSuccessMessage] = useState(""); // For displaying success message
 
   const inputsRef = useRef(new Array(6));
 
@@ -21,33 +21,33 @@ const Verification = () => {
   };
 
   const handleKeyDown = (e, index) => {
-    if (e.key === 'Backspace' && !e.target.value && index > 0) {
+    if (e.key === "Backspace" && !e.target.value && index > 0) {
       inputsRef.current[index - 1].focus();
     }
   };
 
   const verifyCode = async () => {
     // Reset error and success messages each time verification is attempted
-    setError('');
-    setSuccessMessage('');
+    setError("");
+    setSuccessMessage("");
 
-    const fullCode = codes.join('');
+    const fullCode = codes.join("");
     if (fullCode.length < codes.length) {
-      setError('Please fill in all the fields.');
+      setError("Please fill in all the fields.");
       return;
     }
 
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       if (!token) {
-        setError('No authentication token found. Please login again.');
+        setError("No authentication token found. Please login again.");
         return;
       }
 
       const response = await fetch(`${backendUrl}/auth/enterotp`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ code: fullCode }),
@@ -55,14 +55,14 @@ const Verification = () => {
 
       const data = await response.json();
       if (!response.ok) {
-        throw new Error(data.message || 'Verification failed');
+        throw new Error(data.message || "Verification failed");
       }
       // Assuming the success message is in data.data or data.message
       // Adjust according to your API response
       setSuccessMessage(data.data || data.message);
-      console.log('Verification successful');
+      console.log("Verification successful");
     } catch (error) {
-      console.error('Verification error:', error);
+      console.error("Verification error:", error);
       setError(error.message);
     }
   };
@@ -72,8 +72,8 @@ const Verification = () => {
   }, []);
 
   return (
-    <div className="home-container">
-      <div className="verification-container">
+    <div className="verifyhome-container flex justify-center  lg:mt-40 mt-10">
+      <div className="verification-container ">
         <h2>Connect Your Headset</h2>
         <p>
           Please enter the 6-digit code that appears on your headset to connect.
@@ -81,7 +81,7 @@ const Verification = () => {
         {error && <div className="error-message">{error}</div>}
         {successMessage && (
           <div className="success-message">{successMessage}</div>
-        )}{' '}
+        )}{" "}
         {/* Display success message */}
         <div className="code-container">
           {codes.map((code, index) => (
@@ -91,9 +91,9 @@ const Verification = () => {
               className="code"
               maxLength="1"
               value={code}
-              onChange={e => handleChange(e.target.value, index)}
-              onKeyDown={e => handleKeyDown(e, index)}
-              ref={el => (inputsRef.current[index] = el)}
+              onChange={(e) => handleChange(e.target.value, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              ref={(el) => (inputsRef.current[index] = el)}
               required
             />
           ))}

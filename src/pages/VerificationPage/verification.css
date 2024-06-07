@@ -11,13 +11,14 @@ html {
   background-size: cover;
 }
 
+
+
 /* Style for the container resembling the login box, with translucent backdrop */
 .verification-container {
-  max-width: 100%;
+  /* max-width: 100%; */
 
   position: relative;
 
-  width: auto; /* Adjust width as necessary */
   margin: auto; /* Centers the form in the viewport */
   border-radius: 10px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -41,7 +42,6 @@ h2 {
   flex-wrap: nowrap;
   padding: 20px; /* Padding around the code container for spacing */
   position: relative;
-
 }
 
 .code {
@@ -56,7 +56,6 @@ h2 {
   color: #010101;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-
 }
 
 .code-container input[type="text"] {
